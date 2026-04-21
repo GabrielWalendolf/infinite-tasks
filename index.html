@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite Tasks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1>Infinite Tasks</h1>
+      <div class="search-wrapper">
+        <span class="search-icon">&#128269;</span>
+        <input type="text" id="search-input" placeholder="Search workspaces...">
+      </div>
+    </div>
+
+    <p class="sidebar-section-title">Workspaces</p>
+
+    <div id="workspace-list"></div>
+
+    <div class="sidebar-footer">
+      <button class="btn-new-workspace" id="add-workspace-btn">+ New Workspace</button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Empty state -->
+    <div id="empty-state" class="empty-state">
+      <div class="empty-icon">&#128193;</div>
+      <p>Select or create a workspace to get started</p>
+    </div>
+
+    <!-- Workspace view -->
+    <div id="workspace-view" class="workspace-view hidden">
+
+      <nav class="workspace-nav">
+        <h2 id="workspace-title"></h2>
+
+        <div class="view-toggle">
+          <button id="kanban-btn" class="active">Kanban</button>
+          <button id="list-btn">List</button>
+        </div>
+
+        <button class="btn-add-task" id="add-task-btn">+ Add Task</button>
+        <button class="btn-delete-workspace" id="delete-workspace-btn">Delete</button>
+      </nav>
+
+      <!-- Kanban -->
+      <div id="kanban-view" class="kanban-view"></div>
+
+      <!-- List -->
+      <div id="list-view" class="list-view hidden"></div>
+
+    </div>
+
+  </main>
+</div>
+
+<!-- Modal -->
+<div id="modal-overlay" class="modal-overlay hidden">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-title">New Workspace</h3>
+      <button class="btn-close" id="modal-close-btn">&#x2715;</button>
+    </div>
+
+    <!-- Workspace fields -->
+    <div id="modal-workspace-fields">
+      <div class="form-group">
+        <label for="workspace-name-input">Name</label>
+        <input type="text" id="workspace-name-input" placeholder="e.g. Work, Personal, Studies...">
+      </div>
+    </div>
+
+    <!-- Task fields -->
+    <div id="modal-task-fields" class="hidden">
+      <div class="form-group">
+        <label for="task-title-input">Title</label>
+        <input type="text" id="task-title-input" placeholder="Task title...">
+      </div>
+      <div class="form-group">
+        <label for="task-desc-input">Description</label>
+        <textarea id="task-desc-input" placeholder="Optional description..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="task-status-select">Status</label>
+        <select id="task-status-select">
+          <option value="pending">Pending</option>
+          <option value="in-progress">In Progress</option>
+          <option value="done">Done</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-cancel" id="modal-cancel-btn">Cancel</button>
+      <button class="btn-submit" id="modal-submit-btn">Create</button>
+    </div>
+  </div>
+</div>
+
+<script src="dist/main.js"></script>
+</body>
+</html>
