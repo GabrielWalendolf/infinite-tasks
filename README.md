@@ -1,3 +1,5 @@
+https://github.com/GabrielWalendolf/infinite-tasks
+
 # Infinite Tasks
 
 A lightweight task management web app built with TypeScript, no frameworks required.
