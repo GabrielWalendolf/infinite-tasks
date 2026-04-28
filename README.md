@@ -15,13 +15,28 @@ A lightweight task management web app built with TypeScript, no frameworks requi
 - TypeScript
 - Vanilla HTML + CSS
 - `localStorage` for persistence
+- [esbuild](https://esbuild.github.io/) for bundling
 
 ## Running locally
 
 Just open `index.html` in your browser — the pre-compiled bundle (`dist/main.js`) is included.
 
-To recompile from TypeScript source:
+## Rebuilding from source
+
+Install dependencies:
 
 ```bash
-npx tsc
+npm install
+```
+
+Build:
+
+```bash
+npm run build
+```
+
+Type-check only (without generating files):
+
+```bash
+npm run typecheck
 ```
